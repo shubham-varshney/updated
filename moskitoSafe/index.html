@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="shortcut icon" href="assets/img/favicon.png">
+
+    <title>MoskitoSafe</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+	<link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/main.css" rel="stylesheet">
+
+    <!-- Fonts from Google Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,900' rel='stylesheet' type='text/css'>
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	  
+	  
+    <![endif]-->
+	
+	<style>
+	#portfolio .portfolio-item {
+  margin: 0 0 15px;
+  right: 0;
+}
+#portfolio .portfolio-item .portfolio-link {
+  display: block;
+  position: relative;
+  max-width: 400px;
+  margin: 0 auto;
+}
+#portfolio .portfolio-item .portfolio-link .portfolio-hover {
+  background: rgba(254, 209, 54, 0.9);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all ease 0.5s;
+  -webkit-transition: all ease 0.5s;
+  -moz-transition: all ease 0.5s;
+}
+#portfolio .portfolio-item .portfolio-link .portfolio-hover:hover {
+  opacity: 1;
+}
+#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content {
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  font-size: 20px;
+  text-align: center;
+  top: 50%;
+  margin-top: -12px;
+  color: white;
+}
+#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content i {
+  margin-top: -12px;
+}
+#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h3,
+#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h4 {
+  margin: 0;
+}
+#portfolio .portfolio-item .portfolio-caption {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: white;
+  text-align: center;
+  padding: 25px;
+}
+#portfolio .portfolio-item .portfolio-caption h4 {
+  text-transform: none;
+  margin: 0;
+}
+#portfolio .portfolio-item .portfolio-caption p {
+  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: italic;
+  font-size: 16px;
+  margin: 0;
+}
+#portfolio * {
+  z-index: 2;
+}
+@media (min-width: 767px) {
+  #portfolio .portfolio-item {
+    margin: 0 0 30px;
+  }
+}
+
+
+
+.portfolio-modal .modal-dialog {
+  margin: 0;
+  height: 50%;
+  width: auto;
+}
+.portfolio-modal .modal-content {
+  border-radius: 0;
+  background-clip: border-box;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: none;
+  min-height: 100%;
+  padding: 100px 0;
+  text-align: center;
+}
+.portfolio-modal .modal-content h2 {
+  margin-bottom: 15px;
+  font-size: 3em;
+}
+.portfolio-modal .modal-content p {
+  margin-bottom: 30px;
+}
+.portfolio-modal .modal-content p.item-intro {
+  margin: 20px 0 30px;
+  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: italic;
+  font-size: 16px;
+}
+.portfolio-modal .modal-content ul.list-inline {
+  margin-bottom: 30px;
+  margin-top: 0;
+}
+.portfolio-modal .modal-content img {
+  margin-bottom: 30px;
+}
+.portfolio-modal .close-modal {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  background-color: transparent;
+  top: 25px;
+  right: 25px;
+  cursor: pointer;
+}
+.portfolio-modal .close-modal:hover {
+  opacity: 0.3;
+}
+.portfolio-modal .close-modal .lr {
+  height: 75px;
+  width: 1px;
+  margin-left: 35px;
+  background-color: #222222;
+  transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  /* IE 9 */
+  -webkit-transform: rotate(45deg);
+  /* Safari and Chrome */
+  z-index: 1051;
+}
+.portfolio-modal .close-modal .lr .rl {
+  height: 75px;
+  width: 1px;
+  background-color: #222222;
+  transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  /* IE 9 */
+  -webkit-transform: rotate(90deg);
+  /* Safari and Chrome */
+  z-index: 1052;
+}
+.portfolio-modal .modal-backdrop {
+  opacity: 0;
+  display: none;
+}
+	
+.contact ul.list-social li a {
+  display: block;
+  height: 80px;
+  width: 80px;
+  line-height: 80px;
+  font-size: 40px;
+  border-radius: 100%;
+  color: white;
+}
+.contact ul.list-social li.social-twitter a {
+  background-color: black;
+}
+.contact ul.list-social li.social-twitter a:hover {
+  background-color: black;
+}
+.contact ul.list-social li.social-facebook a {
+  background-color: #3b5998;
+}
+.contact ul.list-social li.social-facebook a:hover {
+  background-color: #344e86;
+}
+.contact ul.list-social li.social-google-plus a {
+  background-color: #dd4b39;
+}
+.contact ul.list-social li.social-google-plus a:hover {
+  background-color: #d73925;
+}
+
+.contact ul.list-social li.social-instagram a {
+  background-color: black;
+}
+.contact ul.list-social li.social-instagram a:hover {
+  background-color: black;
+	</style>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+	
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><b>MOSKITO SAFE</b></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="https://www.safetykart.com/mosquito-repellents/6911-moskito-safe-100-natural-mosquito-repellent.html"><b>Shop Now!</b></a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+	
+	<div>
+	<img src="assets/img/banner.png" width="1400" height="400" style="max-width: 100%;height: auto; margin-top:52px;">
+	<a href="https://www.safetykart.com/mosquito-repellents/6911-moskito-safe-100-natural-mosquito-repellent.html"  style="font-size:25px;"><p><center><b>Shop Now From Safetykart</b>&nbsp;&nbsp;&nbsp;<img src="assets/img/SafetyKart1.png" style="height:100px;width:100px;"></center></p></a>
+	<hr></div>
+<!--
+	<div id="headerwrap">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6" style="text-align:center;">
+					<h1><b>Moskito Safe</b><br/></h1>
+					<h2 style="color:white;">Alcohol And DEET Free Mosquito Repellent</h2><br><br>
+					<!--<form class="form-inline" role="form">
+					  <div class="form-group">
+					    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter your email address">
+					  </div>-
+					  <button type="submit" class="btn btn-warning btn-lg">Shop Now</button>
+										
+				</div><!-- /col-lg-6 -
+				<div class="col-lg-6">
+					<img class="img-responsive" src="assets/img/new2.png" alt="" style="height:450px; margin-left:150px;">
+				</div><!-- /col-lg-6 -
+				
+			</div><!-- /row -
+		</div><!-- /container --
+	</div><!-- /headerwrap -->
+	
+	<div class="container">
+	<div class="container">
+		<div class="row mt centered">
+			<div class="col-lg-6 col-lg-offset-3">
+				<h1>Awesome Features</h1><br><br>
+				<h3></h3>
+			</div>
+		</div><!-- /row 3589C43589C4-->
+		
+		<div class="row mt centered">
+			<div class="col-lg-4">
+				<img src="assets/img/100-natural-badge.png" width="180" alt=""><br><br><br>
+				<h4>100% Natural Product</h4>
+				<p>100 % natural mosquito repellent.</p>
+				
+			</div><!--/col-lg-4 -->
+
+			<div class="col-lg-4">
+				<img src="assets/img/time.png" width="180" alt=""><br><br><br>
+				<h4>Upto 4 Hour Protection</h4>
+				<p>Effective protection for upto 3-4 hours</p>
+				
+
+			</div><!--/col-lg-4 -->
+
+			<div class="col-lg-4">
+				<img src="assets/img/man-carrying-package.png" width="180" alt=""><br><br><br>
+				<h4>Easy To Carry</h4>
+				<p>Sleek bottle, convenient to carry around</p>
+
+			</div><!--/col-lg-4 -->
+		</div><!-- /row -->
+		
+		<div class="row mt centered">
+		<div class="col-lg-4">
+				<img src="assets/img/virus.png" width="180" alt=""><br><br><br>
+				<h4>Protection From Diseases</h4>
+				<p>Protects you from diseases like dengue, malaria and chikungunya.</p>
+			</div><!--/col-lg-4 -->
+
+			<div class="col-lg-4">
+				<img src="assets/img/no-drinks.png" width="180" alt=""><br><br><br>
+				<h4>Alcohol and DEET free</h4>
+				<p></p>
+
+			</div>
+			
+			<div class="col-lg-4">
+				<img src="assets/img/3-flowers.png" width="180" alt=""><br><br></br>
+				<h4>Fragnance</h4>
+				<p>Mild aroma of Neem and Lemon.</p>
+
+			</div>
+		
+		
+		</div>
+		
+		
+	</div><!-- /container --><hr>
+	
+		
+    <!-- Portfolio Grid Section -->
+    <section id="portfolio" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h1 class="section-heading">Portfolio</h1>
+                    
+                </div>
+            </div><br><br>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="assets/img/20246372_781337402048332_8203664765161903811_n.jpg" class="img-responsive" alt="" style="height:300px;width:100%;">
+                    </a>
+                    
+                </div>
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="assets/img/20294031_783809601801112_2364337692356721025_n.jpg" class="img-responsive" alt="" style="height:300px;width:100%;">
+                    </a>
+                    
+                </div>
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="assets/img/20429676_783800368468702_1396074447913161548_n.jpg" class="img-responsive" alt="" style="height:300px;width:100%;">
+                    </a>
+                   
+                </div>
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="assets/img/20228807_778622758986463_7231356057363115517_n.jpg" class="img-responsive" alt="" style="height:300px;width:100%;">
+                    </a>
+                   
+                </div>
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="assets/img/20258087_782335735281832_226418449472174087_n.jpg" class="img-responsive" alt=""style="height:300px;width:100%;">
+                    </a>
+                   
+                </div>
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="assets/img/20046395_777297762452296_205518397418081227_n.jpg" class="img-responsive" alt=""style="height:300px;width:100%;">
+                    </a>
+                    <!--<div class="portfolio-caption">
+                        <h4>Dreams</h4>
+                        <p class="text-muted">Website Design</p>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+    </section>
+	
+	
+	
+	<!-- Portfolio Modals -->
+    <!-- Use the modals below to showcase details about your portfolio projects! -->
+
+    <!-- Portfolio Modal 1 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here 
+                                <h2>Project Name</h2>
+                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>-->
+                                <img class="img-responsive img-centered" src="assets/img/20246372_781337402048332_8203664765161903811_n.jpg" alt="">
+                                <!--<p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                <p>
+                                    <strong>Want these icons in this portfolio item sample?</strong>You can download 60 of them for free, courtesy of <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">RoundIcons.com</a>, or you can purchase the 1500 icon set <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">here</a>.</p>
+                                <ul class="list-inline">
+                                    <li>Date: July 2014</li>
+                                    <li>Client: Round Icons</li>
+                                    <li>Category: Graphic Design</li>
+                                </ul>-->
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Modal 2 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="modal-body">
+                                <!--<h2>Project Heading</h2>
+                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>-->
+                                <img class="img-responsive img-centered" src="assets/img/20294031_783809601801112_2364337692356721025_n.jpg" alt="">
+                                
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Modal 3 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here
+                                <h2>Project Name</h2>
+                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>-->
+                                <img class="img-responsive img-centered" src="assets/img/20429676_783800368468702_1396074447913161548_n.jpg" alt="">
+                                
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Modal 4 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here 
+                                <h2>Project Name</h2>
+                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>-->
+                                <img class="img-responsive img-centered" src="assets/img/20228807_778622758986463_7231356057363115517_n.jpg" alt="">
+                                
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Modal 5 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here 
+                                <h2>Project Name</h2>
+                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>-->
+                                <img class="img-responsive img-centered" src="assets/img/20258087_782335735281832_226418449472174087_n.jpg" alt="">
+                                
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Modal 6 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -
+                                <h2>Project Name</h2>
+                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>-->
+                                <img class="img-responsive img-centered" src="assets/img/20046395_777297762452296_205518397418081227_n.jpg" alt="">
+                                
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+	<!--
+	<div class="container">
+		<hr>
+		<div class="row centered">
+			<div class="col-lg-6 col-lg-offset-3">
+				<form class="form-inline" role="form">
+				  <div class="form-group">
+				    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter your email address">
+				  </div>
+				  <button type="submit" class="btn btn-warning btn-lg">Invite Me!</button>
+				</form>					
+			</div>
+			<div class="col-lg-3"></div>
+		</div><!-- /row 
+		<hr>
+	</div><!-- /container 
+	
+	<div class="container">
+		<div class="row mt centered">
+			<div class="col-lg-6 col-lg-offset-3">
+				<h1>Flatty is for Everyone.</h1>
+				<h3>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</h3>
+			</div>
+		</div><!-- /row -
+	
+		<! -- CAROUSEL >
+		<div class="row mt centered">
+			<div class="col-lg-6 col-lg-offset-3">
+				<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+				  <!-- Indicators -
+				  <ol class="carousel-indicators">
+				    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+				    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+				    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+				  </ol>
+				
+				  <!-- Wrapper for slides 
+				  <div class="carousel-inner">
+				    <div class="item active">
+				      <img src="assets/img/p01.png" alt="">
+				    </div>
+				    <div class="item">
+				      <img src="assets/img/p02.png" alt="">
+				    </div>
+				    <div class="item">
+				      <img src="assets/img/p03.png" alt="">
+				    </div>
+				  </div>
+				</div>			
+			</div><!-- /col-lg-8 -
+		</div><!-- /row 
+	</div><! --/container -
+	
+	<div class="container">
+		<hr>
+		<div class="row centered">
+			<div class="col-lg-6 col-lg-offset-3">
+				<form class="form-inline" role="form">
+				  <div class="form-group">
+				    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter your email address">
+				  </div>
+				  <button type="submit" class="btn btn-warning btn-lg">Invite Me!</button>
+				</form>					
+			</div>
+			<div class="col-lg-3"></div>
+		</div><!-- /row -
+		<hr>
+	</div><!-- /container -
+
+	<div class="container">
+		<div class="row mt centered">
+			<div class="col-lg-6 col-lg-offset-3">
+				<h1>Our Awesome Team.<br/>Design Lovers.</h1>
+				<h3>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</h3>
+			</div>
+		</div><!-- /row -
+		
+		<div class="row mt centered">
+			<div class="col-lg-4">
+				<img class="img-circle" src="assets/img/pic1.jpg" width="140" alt="">
+				<h4>Michael Robson</h4>
+				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.</p>
+				<p><i class="glyphicon glyphicon-send"></i> <i class="glyphicon glyphicon-phone"></i> <i class="glyphicon glyphicon-globe"></i></p>
+			</div><!--/col-lg-4 
+
+			<div class="col-lg-4">
+				<img class="img-circle" src="assets/img/pic2.jpg" width="140" alt="">
+				<h4>Pete Ford</h4>
+				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.</p>
+				<p><i class="glyphicon glyphicon-send"></i> <i class="glyphicon glyphicon-phone"></i> <i class="glyphicon glyphicon-globe"></i></p>
+			</div><!--/col-lg-4 -
+
+			<div class="col-lg-4">
+				<img class="img-circle" src="assets/img/pic3.jpg" width="140" alt="">
+				<h4>Angelica Finning</h4>
+				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.</p>
+				<p><i class="glyphicon glyphicon-send"></i> <i class="glyphicon glyphicon-phone"></i> <i class="glyphicon glyphicon-globe"></i></p>
+			</div><!--/col-lg-4 -
+		</div><!-- /row -
+	</div><!-- /container -
+	
+	<div class="container" >
+		<hr>
+		<div class="row centered">
+			<div class="col-lg-6 col-lg-offset-3">
+				<form class="form-inline" role="form">
+				  <div class="form-group">
+				    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter your email address">
+				  </div>
+				  <button type="submit" class="btn btn-warning btn-lg">Invite Me!</button>
+				</form>					
+			</div>
+			<div class="col-lg-3" ></div>
+		</div><!-- /row -->
+		<HR>
+		<div class="row">
+		<center><h1>CONTACT US</h1></center><br><br><br>
+		
+		</div>
+	
+    <section id="contact" class="contact">
+        <div class="container">
+		<div class="row" style="color:white;">
+		<div class="col-sm-6">
+		<h1 style="color:#3589C4"><b>MOSKITO SAFE</b></h1><br>
+		
+		<h3>Redcliffe Hygiene Private Limited</h3>
+           <h4>1st Floor, Plot No C-4, Jal Vayu Vihar Road,<br>
+            Sector 31, Shrimati Santhosh Yadav Marg,<br>
+                  Gurugram, Haryana, 122001, INDIA<br></h4>
+                                
+                                      <h4><b>Email :</b><a href="#" style="color:red;"> care@redcliffehygiene.com</a></h4>
+									  <h4><b>Phone:</b>0124-4202705</h4> <br> 
+									  
+									 
+		
+		
+		
+		
+		</div>
+		<div class="col-sm-6">
+		
+		
+		
+		<!--<h3 style="margin-left:70px;"><b>GET IN TOUCH WITH US</b></h3>
+					
+					<p>
+						<form class="form-horizontal" role="form" action="mail.php" method="post">
+						  <div class="form-group">
+						    <label for="inputEmail1" class="col-lg-4 control-label"></label>
+						    <div class="col-lg-10">
+						      <input type="email" class="form-control" id="inputEmail1" placeholder="Email" name="email">
+						    </div>
+						  </div>
+						  <div class="form-group">
+						    <label for="text1" class="col-lg-4 control-label"></label>
+						    <div class="col-lg-10">
+						      <input type="text" class="form-control" id="text1" placeholder="Your Name" name="name">
+						    </div>
+						  </div>
+						  <div class="form-group">
+						    <label for="text1" class="col-lg-4 control-label"></label>
+						    <div class="col-lg-10">
+						      <textarea class="form-control col-xs-12" rows="4" placeholder="Message" name="message"></textarea>
+						    </div>
+						  </div>
+						  <div class="form-group">
+						    <div class="col-lg-10">
+						      <center><button type="submit" class="btn btn-success">Send</button></center>
+						    </div>
+						  </div>
+					   </form>
+					</p> -->
+            <center><h2>Follow Us On</h2></center><br><br>
+            <ul class="list-inline list-social" style="text-align:center">
+                <li class="social-twitter">
+                    <a href="https://www.instagram.com/moskito_safe/"><i class="fa fa-instagram" style="color:white;"></i></a>
+                </li>
+                <li class="social-facebook">
+                    <a href="https://www.facebook.com/MoskitoSafe/"><i class="fa fa-facebook" style="color:white;"></i></a>
+                </li>
+                <li class="social-google-plus">
+                    <a href="https://www.youtube.com/watch?v=he3WseXrd0Q"><i class="fa fa-youtube" style="color:white;"></i></a>
+                </li>
+				<!--<li class="social-google-plus">
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                </li>-- 
+            </ul></div></div><br><br>
+			<div class="row">
+			 <ul class="list-inline list-social" style="text-align:center;">
+                <li class="social-twitter">
+                    <a href="https://www.instagram.com/gym_safe/"><i class="fa fa-instagram" style="color:white;"></i></a>
+                </li>
+                <li class="social-facebook">
+                    <a href="https://www.facebook.com/GymSafeIndia/?ref=br_rs"><i class="fa fa-facebook"></i></a>
+                </li>
+                <li class="social-google-plus">
+                    <a href="https://www.youtube.com/watch?v=he3WseXrd0Q"><i class="fa fa-youtube"></i></a>-->
+                </li>
+				
+            </ul>
+			</div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container" style="background-color:#3589C4">
+            <center><p><b>Copyright 2017. All Rights Reserved by MOSKITOSAFE.<br> Design by <a href="http://www.redcliffehygiene.com/" style="color:black;">Redcliffe Hygiene Pvt. Ltd.</a></b></p></center>
+            <!--<ul class="list-inline" style="text-align:center;">
+                <li>
+                    <a href="#">Privacy</a>
+                </li>
+                <li>
+                    <a href="#">Terms</a>
+                </li>
+                <li>
+                    <a href="#">FAQ</a>
+                </li>
+            </ul>-->
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== --></div>
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+  </body>
+</html>
